@@ -1,0 +1,15 @@
+<div class="card w-75">
+  <div class="card-body">
+    <h5 class="card-title"><%= @task.title %></h5>
+    <p class="card-text"><%= @task.details %></p>
+    <%= link_to edit_task_path(@task) do %>
+			<i class="fas fa-edit"></i>
+		<%end%>
+		<%= link_to task_path(@task), method: :delete, data: { confirm: "Are you sure?" } do %>
+			<i class="fas fa-trash"></i>
+		<%end%>
+		<span class="badge badge-light">
+			<%= link_to "back to list", tasks_path %>
+		</span>
+  </div>
+</div>
